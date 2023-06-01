@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="signup.css">
+        <title>Sign Up</title>
     </head>
     <body>
-        
+        <script src="Script/Signup.js"></script>
+        <div id="signuptitle">
+            Sign Up
+        </div>
+        <div id="signupcontent">
+            <div id="signupusernametext">Username</div>
+            <input id="signupusernametextbox" type="text">
+            <div id="signupemailtext">Email</div>
+            <input id="signupemailtextbox" type="text">
+            <div id="signuppasswordtext">Password</div>
+            <input id="signuppasswordtextbox" type="text">
+            <div id="signuppasswordconfirmtext">Password Retype</div>
+            <input id="signuppasswordconfirmtextbox" type="text">
+            <button id="signupbackbutton" onclick="signupBackClick();">Back</button>
+            <button id="signupconfirmbutton" onclick="signupConfirmClick();">Sign Up</button>
+        </div>
     </body>
 </html>

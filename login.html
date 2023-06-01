@@ -2,33 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="login.css">
         <title>Login</title>
-        <style>
-            #loginback {
-                position: absolute;
-                left: 800px;
-                top: 600px;
-                font-family: 'Open Sans';
-            }
-
-            #loginconfirm {
-                position: absolute;
-                left: 880px;
-                top: 600px;
-                font-family: 'Open Sans';
-            }
-        </style>
     </head>
     <body>
-        <div id="ID">
-
+        <script src="Script/Login.js"></script>
+        <div id="logintitle">
+            Log in
         </div>
-        <div id="password">
-
-        </div>
-        <div id="loginlowerbutton">
-            <button id="loginback" onclick="location.href = 'index.html';">Back</button>
-            <button id="loginconfirm">Log in</button>
+        <div id="logincontent">
+            <div id="loginusernametext">Username</div>
+            <input id="loginusernametextbox" type="text">
+            <div id="loginpasswordtext">Password</div>
+            <input id="loginpasswordtextbox" type="text">
+            <button id="loginback" onclick="loginBackClick();">Back</button>
+            <button id="loginconfirm" onclick="loginConfirmClick();">Log in</button>
         </div>
     </body>
 </html>

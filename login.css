@@ -1,0 +1,68 @@
+#logintitle {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translate(-50%, 0px);
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 72px;
+}
+
+#logincontent {
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    transform: translate(-50%, 0px);
+    width: 400px;
+    height: 260px;
+}
+
+#loginusernametext {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#loginusernametextbox {
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    height: 40px;
+}
+
+#loginpasswordtext {
+    position: absolute;
+    left: 20px;
+    top: 120px;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#loginpasswordtextbox {
+    position: absolute;
+    left: 20px;
+    top: 160px;
+    height: 40px;
+}
+
+#loginback {
+    position: absolute;
+    left: 240px;
+    top: 220px;
+    width: 80px;
+    height: 40px;
+    font-family: 'Open Sans';
+}
+
+#loginconfirm {
+    position: absolute;
+    left: 320px;
+    top: 220px;
+    width: 80px;
+    height: 40px;
+    font-family: 'Open Sans';
+}
