@@ -12,14 +12,20 @@
     position: absolute;
     left: 50%;
     top: 400px;
+    width: 160px;
+    height: 40px;
     transform: translate(-50%, 0);
     font-family: 'Open Sans';
+    font-size: 24px;
 }
 
 #indexbuttonsignup {
     position: absolute;
     left: 50%;
-    top: 440px;
+    top: 480px;
+    width: 160px;
+    height: 40px;
     transform: translate(-50%, 0);
     font-family: 'Open Sans';
+    font-size: 24px;
 }

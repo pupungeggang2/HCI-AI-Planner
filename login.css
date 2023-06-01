@@ -12,57 +12,61 @@
     position: absolute;
     left: 50%;
     top: 200px;
-    transform: translate(-50%, 0px);
     width: 400px;
-    height: 260px;
+    height: 600px;
+    transform:translate(-50%, 0px);
 }
 
 #loginusernametext {
     position: absolute;
-    left: 20px;
+    left: 0px;
     top: 20px;
     font-family: 'Open Sans';
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 #loginusernametextbox {
     position: absolute;
-    left: 20px;
+    left: 0px;
     top: 60px;
+    width: 400px;
     height: 40px;
 }
 
 #loginpasswordtext {
     position: absolute;
-    left: 20px;
+    left: 0px;
     top: 120px;
     font-family: 'Open Sans';
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 #loginpasswordtextbox {
     position: absolute;
-    left: 20px;
+    left: 0px;
     top: 160px;
+    width: 400px;
     height: 40px;
 }
 
 #loginback {
     position: absolute;
-    left: 240px;
+    left: 180px;
     top: 220px;
-    width: 80px;
+    width: 120px;
     height: 40px;
     font-family: 'Open Sans';
+    font-size: 24px;
 }
 
 #loginconfirm {
     position: absolute;
-    left: 320px;
+    left: 300px;
     top: 220px;
-    width: 80px;
+    width: 120px;
     height: 40px;
     font-family: 'Open Sans';
+    font-size: 24px;
 }
