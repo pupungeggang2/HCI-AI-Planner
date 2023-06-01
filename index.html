@@ -2,17 +2,43 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet" type="text/css"/>
-        <title>HCI-AI-Planner</title>
+        <title>Plan GPT</title>
+        <style>
+            #indexbanner {
+                position: absolute;
+                left: 50%;
+                top: 100px;
+                transform: translate(-50%, 0px);
+                font-family: 'Open Sans';
+                font-weight: bold;
+                font-size: 144px;
+            }
+
+            #indexbuttonlogin {
+                position: absolute;
+                left: 50%;
+                top: 400px;
+                transform: translate(-50%, 0);
+                font-family: 'Open Sans';
+            }
+
+            #indexbuttonsignup {
+                position: absolute;
+                left: 50%;
+                top: 440px;
+                transform: translate(-50%, 0);
+                font-family: 'Open Sans';
+            }
+        </style>
     </head>
     <body>
         <script src="Script/Index.js"></script>
-        <div id="banner">
+        <div id="indexbanner">
             Plan GPT
         </div>
-        <div id="lowermenu">
-            <button id="buttonlogin" onclick="onLoginButtonClick();">Log in</button>
-            <button id="buttonsignup" onclick="onSignUpButtonClick();">Sign up</button>
+        <div id="indexlowermenu">
+            <button id="indexbuttonlogin" onclick="location.href = 'login.html';">Log in</button>
+            <button id="indexbuttonsignup" onclick="location.href = 'signup.html';">Sign up</button>
         </div>
     </body>
 </html>
