@@ -14,10 +14,11 @@ function signupConfirmClick() {
         let account = JSON.parse(localStorage.getItem('PlanGPT-Account'));
         console.log(account);
         let tempAccount = {
-            'username' : username,
-            'email' : email,
-            'password' : password,
-            'plan' : [],
+            'Username' : username,
+            'Email' : email,
+            'Password' : password,
+            'FirstLoggedIn' : true,
+            'Plan' : [],
         };
         console.log(tempAccount);
         account.push(tempAccount);
@@ -28,18 +29,22 @@ function signupConfirmClick() {
 
 function signupValidityCheck(username, email, password, passwordConfirm) {
     if (username.length <= 0) {
+        alert('Username is not valid!');
         return false;
     }
 
     if (email.length <= 0) {
+        alert('Email is not valid!');
         return false;
     }
 
     if (password.length <= 0) {
+        alert('Password is not valid!');
         return false;
     }
 
     if (password != passwordConfirm) {
+        alert('Passwords do not match!');
         return false;
     }
 

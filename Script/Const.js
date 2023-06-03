@@ -1,6 +1,7 @@
 const emptyAccount = {
-    'username' : '',
-    'email' : '',
-    'password' : '',
-    'plan' : [],
+    'Username' : '',
+    'Email' : '',
+    'Password' : '',
+    'FirstLoggedIn' : true,
+    'Plan' : [],
 };
