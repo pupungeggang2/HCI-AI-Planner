@@ -1,0 +1,50 @@
+#titletext {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: 'Open Sans';
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#leftbar {
+    position: absolute;
+    left: 0px;
+    top: 120px;
+    width: 320px;
+    height: 100%;
+    background-color: Lavender;
+}
+
+#leftbardashboard {
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    width: 280px;
+    height: 80px;
+    font-family: 'Open Sans';
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#leftbarcalendar {
+    position: absolute;
+    left: 20px;
+    top: 120px;
+    width: 280px;
+    height: 80px;
+    font-family: 'Open Sans';
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#leftbarsettings {
+    position: absolute;
+    left: 20px;
+    top: 200px;
+    width: 280px;
+    height: 80px;
+    font-family: 'Open Sans';
+    font-size: 32px;
+    font-weight: bold;
+}

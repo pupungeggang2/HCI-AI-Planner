@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF=8">
+        <link rel="stylesheet" href="leftbar.css">
+        <link rel="stylesheet" href="calendar.css">
         <title>Calendar</title>
     </head>
     <body>
+        <script src="Script/Calendar.js"></script>
+        <div id="titletext">Calendar</div>
+        <div id="leftbar">
+            <div id="leftbardashboard" onclick="moveToDashboard();">Dashboard</div>
+            <div id="leftbarcalendar" onclick="moveToCalendar();">Calendar</div>
+            <div id="leftbarsettings" onclick="moveToSettings();">Settings</div>
+        </div>
+        <div id="calendartop"></div>
+        <div id="weeklyview"></div>
+        <div id="monthlyview"></div>
     </body>
 </html>

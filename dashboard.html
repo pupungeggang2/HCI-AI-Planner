@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF=8">
+        <link rel="stylesheet" href="leftbar.css">
+        <link rel="stylesheet" href="dashboard.css">
         <title>Dashboard</title>
     </head>
     <body>
-        <script src="Dashboard.js"></script>
-        <div id="leftbar"></div>
+        <script src="Script/Dashboard.js"></script>
+        <div id="titletext">Dashboard</div>
+        <div id="leftbar">
+            <div id="leftbardashboard" onclick="moveToDashboard();">Dashboard</div>
+            <div id="leftbarcalendar" onclick="moveToCalendar();">Calendar</div>
+            <div id="leftbarsettings" onclick="moveToSettings();">Settings</div>
+        </div>
+        <div id="dashboardcommandbar">
+            <input id="dashboardcommandbartextbox" type="text">
+            <button id="dashboardcommandbarconfirmbutton" onclick="addPlan();"></button>
+        </div>
+        <div id="dashboarddatetext"></div>
+        <div id="dashboardtoday">
+            <div id="dashboardtodaytext">Today</div>
+        </div>
+        <div id="dashboardtomorrow">
+            <div id="dashboardtomorrowtext">Tomorrow</div>
+        </div>
     </body>
 </html>

@@ -1,3 +1,11 @@
+window.onload = signupInit;
+
+function signupInit() {
+    if (localStorage.getItem('PlanGPT-Account') === null) {
+        localStorage.setItem('PlanGPT-Account', '{}');
+    }
+}
+
 let errorMessage = '';
 
 function signupBackClick() {
@@ -14,14 +22,12 @@ function signupConfirmClick() {
         let account = JSON.parse(localStorage.getItem('PlanGPT-Account'));
         console.log(account);
         let tempAccount = {
-            'Username' : username,
             'Email' : email,
             'Password' : password,
             'FirstLoggedIn' : true,
             'Plan' : [],
         };
-        console.log(tempAccount);
-        account.push(tempAccount);
+        account[username] = tempAccount;
         localStorage.setItem('PlanGPT-Account', JSON.stringify(account));
         location.href = 'index.html';
     }

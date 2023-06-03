@@ -1,3 +1,11 @@
+window.onload = loginInit;
+
+function loginInit() {
+    if (localStorage.getItem('PlanGPT-Account') === null) {
+        localStorage.setItem('PlanGPT-Account', '{}');
+    }
+}
+
 function loginBackClick() {
     location.href = 'index.html';
 }
@@ -10,37 +18,20 @@ function loginConfirmClick() {
 }
 
 function login(username, password) {
-    let noAccount = true;
-
-    if (localStorage.getItem('PlanGPT-Account') === null) {
-        localStorage.setItem('PlanGPT-Account', JSON.stringify([]));
-    }
-
     let account = JSON.parse(localStorage.getItem('PlanGPT-Account'));
 
-    for (let i = 0; i < account.length; i++) {
-        if (username === account[i]['Username']) {
-            noAccount = false;
-
-            if (password === account[i]['Password']) {
-                sessionStorage.setItem('PlanGPT-AccountCurrent', account[i]['username']);
-
-                if (account[i]['FirstLoggedIn'] === true) {
-                    account[i]['FirstLoggedIn'] = false;
-                    localStorage.setItem('PlanGPT-Account', JSON.stringify(account));
-                    location.href = 'tutorial.html';
-                } else {
-                    location.href = 'dashboard.html';
-                }
-                break;
+    if (username in account) {
+        if (password === account[username]['Password']) {
+            sessionStorage.setItem('PlanGPT-AccountCurrent', username);
+            if (account[username]['FirstLoggedIn'] === true) {
+                account[username]['FirstLoggedIn'] = false;
+                localStorage.setItem('PlanGPT-Account', JSON.stringify(account));
+                location.href = 'tutorial.html';
             } else {
-                alert('Password does not match!');
-                break;
+                location.href = 'dashboard.html';
             }
+        } else {
+            alert('Password does not match!');
         }
-    }
-
-    if (noAccount === true) {
-        alert('No account!');
     }
 }

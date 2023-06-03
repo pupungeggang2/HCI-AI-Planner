@@ -1,4 +1,5 @@
 #tutorial {
+    position: absolute;
     left: 50%;
     top: 200px;
     transform: translate(-50%, 0);

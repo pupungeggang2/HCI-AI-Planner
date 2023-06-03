@@ -1,0 +1,53 @@
+#dashboardcommandbar {
+    float: left;
+    position: absolute;
+    left: 480px;
+    top: 140px;
+}
+
+#dashboardcommandbartextbox {
+    position: absolute;
+    width: 600px;
+    height: 40px;
+    background-color: lavenderblush;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-family: 'Open Sans';
+    font-size: 24px;
+}
+
+#dashboardcommandbarconfirmbutton {
+    position: absolute;
+    width: 60px;
+    height: 48px;
+    left: 640px;
+    top: 0px;
+    background-color: blueviolet;
+}
+
+#dashboarddatetext {
+    position: absolute;
+    right: 160px;
+    top: 240px;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 36px;
+}
+
+#dashboardtoday {
+    position: absolute;
+    left: 400px;
+    top : 240px;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 36px;
+}
+
+#dashboardtomorrow {
+    position: absolute;
+    left: 400px;
+    top : 560px;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 36px;
+}
