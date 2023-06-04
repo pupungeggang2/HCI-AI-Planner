@@ -43,6 +43,14 @@
     font-size: 36px;
 }
 
+#dashboardtodaycontent {
+    position: absolute;
+    left: 0px;
+    top : 60px;
+    font-family: 'Open Sans';
+    font-size: 20px;
+}
+
 #dashboardtomorrow {
     position: absolute;
     left: 400px;
@@ -50,4 +58,18 @@
     font-family: 'Open Sans';
     font-weight: bold;
     font-size: 36px;
+}
+
+#dashboardtomorrowcontent {
+    position: absolute;
+    left: 0px;
+    top : 60px;
+    font-family: 'Open Sans';
+    font-size: 20px;
+}
+
+.planinstance {
+    border: 1px solid black;
+    width: 800px;
+    height: 40px;
 }
