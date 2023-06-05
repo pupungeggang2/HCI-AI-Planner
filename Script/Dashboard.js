@@ -118,6 +118,8 @@ function addPlan() {
         plan['Time'][5] = -1;
 
         usernameInfo['Plan'].push(plan);
+        account[username] = usernameInfo;
+        localStorage.setItem('PlanGPT-Account', JSON.stringify(account));
     } else if (command.length === 4) {
         let plan = {
             'Category' : '',
@@ -177,6 +179,8 @@ function addPlan() {
         }
 
         usernameInfo['Plan'].push(plan);
+        account[username] = usernameInfo;
+        localStorage.setItem('PlanGPT-Account', JSON.stringify(account));
     }
 
     commandTextbox.value = '';

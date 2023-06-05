@@ -14,5 +14,24 @@
             <div id="leftbarcalendar" onclick="moveToCalendar();">Calendar</div>
             <div id="leftbarsettings" onclick="moveToSettings();">Settings</div>
         </div>
+        <div id="settingsusername">
+            <div id="settingsusernametext"></div>
+            <input id="settingsusernametextbox" type="text"></input>
+            <button id="settingsusernameconfirmbutton" onclick="changeUsername();">rename</button>
+        </div>
+        <div id="settingsemail">
+            <div id="settingsemailtext"></div>
+            <input id="settingsemailtextbox" type="text"></input>
+            <button id="settingsemailconfirmbutton" onclick="changeEmail();">change</button>
+        </div>
+        <div id="settingspassword">
+            <div id="settingspasswordtext">Password</div>
+            <input id="settingspasswordtextbox" type="password"></input>
+            <div id="settingspasswordconfirmtext">Password Confirm</div>
+            <input id="settingspasswordconfirmtextbox" type="password"></input>
+            <button id="settingspasswordconfirmbutton" onclick="changePassword();">change</button>
+        </div>
+        <button id="settingslogoutbutton" onclick="logout();">Log Out</button>
+        <button id="settingsdeleteaccountbutton" onclick="deleteAccount();">Delete Account</button>
     </body>
 </html>

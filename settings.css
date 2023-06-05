@@ -1,0 +1,115 @@
+#settingsusername {
+    position: absolute;
+    left: 20%;
+    top: 160px;
+}
+
+#settingsusernametext {
+    position: absolute;
+    width: 600px;
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#settingsusernametextbox {
+    position: absolute;
+    top: 40px;
+    width: 200px;
+    height: 20px;
+}
+
+#settingsusernameconfirmbutton {
+    position: absolute;
+    left: 220px;
+    top: 40px;
+    width: 60px;
+    height: 24px;
+}
+
+#settingsemail {
+    position: absolute;
+    left: 20%;
+    top: 280px;
+}
+
+#settingsemailtext {
+    position: absolute;
+    width: 600px;
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#settingsemailtextbox {
+    position: absolute;
+    top: 40px;
+    width: 200px;
+    height: 20px;
+}
+
+#settingsemailconfirmbutton {
+    position: absolute;
+    left: 220px;
+    top: 40px;
+    width: 60px;
+    height: 24px;
+}
+
+#settingspassword {
+    position: absolute;
+    left: 20%;
+    top: 400px;
+}
+
+#settingspasswordtext {
+    position: absolute;
+    width: 600px;
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#settingspasswordtextbox {
+    position: absolute;
+    top: 40px;
+    width: 200px;
+    height: 20px;
+}
+
+#settingspasswordconfirmtext {
+    position: absolute;
+    top: 80px;
+    width: 600px;
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#settingspasswordconfirmtextbox {
+    position: absolute;
+    top: 120px;
+    width: 200px;
+    height: 20px;
+}
+
+#settingspasswordconfirmbutton {
+    position: absolute;
+    left: 220px;
+    top: 120px;
+    width: 60px;
+    height: 24px;
+
+}
+
+#settingslogoutbutton {
+    position: absolute;
+    right: 240px;
+    top: 640px;
+}
+
+#settingsdeleteaccountbutton {
+    position: absolute;
+    right: 80px;
+    top: 640px;
+}
