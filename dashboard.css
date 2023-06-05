@@ -27,7 +27,7 @@
 
 #dashboarddatetext {
     position: absolute;
-    right: 160px;
+    left: 1080px;
     top: 240px;
     font-family: 'Open Sans';
     font-weight: bold;
@@ -69,7 +69,41 @@
 }
 
 .planinstance {
-    border: 1px solid black;
+    position: relative;
+    border-radius: 16px;
     width: 800px;
-    height: 40px;
+    height: 32px;
+    padding-left: 8px;
+    background-color: lavender;
+    margin-bottom: 8px;
+}
+
+.category {
+    position: absolute;
+    top : 0px;
+    font-family: 'Open Sans';
+    font-size: 20px;
+    font-weight: normal;
+    vertical-align: top;
+    left: 40px;
+}
+
+.title {
+    position: absolute;
+    top : 0px;
+    font-family: 'Open Sans';
+    font-size: 20px;
+    font-weight: normal;
+    vertical-align: top;
+    left: 200px;
+}
+
+.time {
+    position: absolute;
+    top : 0px;
+    font-family: 'Open Sans';
+    font-size: 20px;
+    font-weight: normal;
+    vertical-align: top;
+    left: 720px;
 }

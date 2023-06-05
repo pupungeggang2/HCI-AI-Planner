@@ -55,12 +55,32 @@ function dashboardRefresh() {
     tomorrowContent.innerHTML = '';
 
     for (let i = 0; i < usernameInfo['Plan'].length; i++) {
+        let tempStr = '';
+
         if (todayDate[0] === usernameInfo['Plan'][i]['Time'][0] && todayDate[1] === usernameInfo['Plan'][i]['Time'][1] && todayDate[2] === usernameInfo['Plan'][i]['Time'][2]) {
-            todayContent.innerHTML += `<div class="planinstance">${usernameInfo['Plan'][i]['Category']}/${usernameInfo['Plan'][i]['Title']}/${usernameInfo['Plan'][i]['Time']}</div>`;
+            tempStr += `<div class="planinstance">`;
+            tempStr += `<div class="category">${usernameInfo['Plan'][i]['Category']}</div>`;
+            tempStr += `<div class="title">${usernameInfo['Plan'][i]['Title']}</div>`;
+            if (usernameInfo['Plan'][i]['Time'][4] === -1) {
+                tempStr += `<div class="time">--:--</div>`;
+            } else {
+                tempStr += `<div class="time">${String(usernameInfo['Plan'][i]['Time'][4]).padStart(2, '0')}:${String(usernameInfo['Plan'][i]['Time'][5]).padStart(2, '0')}</div>`;
+            }
+            tempStr += `</div>`;
+            todayContent.innerHTML += tempStr;
         }
 
         if (tomorrowDate[0] === usernameInfo['Plan'][i]['Time'][0] && tomorrowDate[1] === usernameInfo['Plan'][i]['Time'][1] && tomorrowDate[2] === usernameInfo['Plan'][i]['Time'][2]) {
-            tomorrowContent.innerHTML += `<div class="planinstance">${usernameInfo['Plan'][i]['Category']}/${usernameInfo['Plan'][i]['Title']}/${usernameInfo['Plan'][i]['Time']}</div>`;
+            tempStr += `<div class="planinstance">`;
+            tempStr += `<div class="category">${usernameInfo['Plan'][i]['Category']}</div>`;
+            tempStr+= `<div class="title">${usernameInfo['Plan'][i]['Title']}</div>`;
+            if (usernameInfo['Plan'][i]['Time'][4] === -1) {
+                tempStr+= `<div class="time">--:--</div>`;
+            } else {
+                tempStr += `<div class="time">${String(usernameInfo['Plan'][i]['Time'][4]).padStart(2, '0')}:${String(usernameInfo['Plan'][i]['Time'][5]).padStart(2, '0')}</div>`;
+            }
+            tempStr += `</div>`;
+            tomorrowContent.innerHTML += tempStr;
         }
     }
 }
@@ -88,22 +108,22 @@ function addPlan() {
 
         if (command[2] === 'today') {
             plan['Time'][0] = today.getFullYear();
-            plan['TIme'][1] = today.getMonth();
-            plan['TIme'][2] = today.getDate();
+            plan['Time'][1] = today.getMonth() + 1;
+            plan['Time'][2] = today.getDate();
             plan['Time'][3] = today.getDay();
         } else if (command[2] === 'tomorrow') {
-            today.setDate(todat.getDate() + 1);
+            today.setDate(today.getDate() + 1);
             plan['Time'][0] = today.getFullYear();
-            plan['TIme'][1] = today.getMonth();
-            plan['TIme'][2] = today.getDate();
+            plan['Time'][1] = today.getMonth() + 1;
+            plan['Time'][2] = today.getDate();
             plan['Time'][3] = today.getDay();
         } else {
             let returnedDate = dateChecker(command[2]);
 
             if (returnedDate === null) {
                 plan['Time'][0] = today.getFullYear();
-                plan['TIme'][1] = today.getMonth();
-                plan['TIme'][2] = today.getDate();
+                plan['Time'][1] = today.getMonth();
+                plan['Time'][2] = today.getDate();
                 plan['Time'][3] = today.getDay();
             } else {
                 let selectedDate = new Date(returnedDate[0], returnedDate[1], returnedDate[2]);
@@ -133,22 +153,22 @@ function addPlan() {
 
         if (command[2] === 'today') {
             plan['Time'][0] = today.getFullYear();
-            plan['TIme'][1] = today.getMonth();
-            plan['TIme'][2] = today.getDate();
+            plan['Time'][1] = today.getMonth() + 1;
+            plan['Time'][2] = today.getDate();
             plan['Time'][3] = today.getDay();
         } else if (command[2] === 'tomorrow') {
             today.setDate(today.getDate() + 1);
             plan['Time'][0] = today.getFullYear();
-            plan['TIme'][1] = today.getMonth();
-            plan['TIme'][2] = today.getDate();
+            plan['Time'][1] = today.getMonth() + 1;
+            plan['Time'][2] = today.getDate();
             plan['Time'][3] = today.getDay();
         } else {
             let returnedDate = dateChecker(command[2]);
 
             if (returnedDate === null) {
                 plan['Time'][0] = today.getFullYear();
-                plan['TIme'][1] = today.getMonth();
-                plan['TIme'][2] = today.getDate();
+                plan['Time'][1] = today.getMonth();
+                plan['Time'][2] = today.getDate();
                 plan['Time'][3] = today.getDay();
             } else {
                 let selectedDate = new Date(returnedDate[0], returnedDate[1], returnedDate[2]);
