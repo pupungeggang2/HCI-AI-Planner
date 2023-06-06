@@ -59,6 +59,17 @@ function dashboardRefresh() {
 
         if (todayDate[0] === usernameInfo['Plan'][i]['Time'][0] && todayDate[1] === usernameInfo['Plan'][i]['Time'][1] && todayDate[2] === usernameInfo['Plan'][i]['Time'][2]) {
             tempStr += `<div class="planinstance">`;
+            
+            tempStr += `<div class="planachievetogglebutton" onclick="planAchieveToggle(usernameInfo['Plan'][${i}]['Category'], usernameInfo['Plan'][${i}]['Title'], usernameInfo['Plan'][${i}]['Time']);">`;
+            
+            if (usernameInfo['Plan'][i]['Status'] === 'NotAchieved') {
+                tempStr += `<div class="plannotachieved"></div>`;
+            } else {
+                tempStr += `<div class="planachieved"></div>`;
+            }
+
+            tempStr += `</div>`;
+
             tempStr += `<div class="category">${usernameInfo['Plan'][i]['Category']}</div>`;
             tempStr += `<div class="title">${usernameInfo['Plan'][i]['Title']}</div>`;
             if (usernameInfo['Plan'][i]['Time'][4] === -1) {
@@ -66,12 +77,23 @@ function dashboardRefresh() {
             } else {
                 tempStr += `<div class="time">${String(usernameInfo['Plan'][i]['Time'][4]).padStart(2, '0')}:${String(usernameInfo['Plan'][i]['Time'][5]).padStart(2, '0')}</div>`;
             }
+            tempStr += `<div class="removebutton" onclick="removePlan(usernameInfo['Plan'][${i}]['Category'], usernameInfo['Plan'][${i}]['Title'], usernameInfo['Plan'][${i}]['Time']);"></div>`;
             tempStr += `</div>`;
             todayContent.innerHTML += tempStr;
         }
 
         if (tomorrowDate[0] === usernameInfo['Plan'][i]['Time'][0] && tomorrowDate[1] === usernameInfo['Plan'][i]['Time'][1] && tomorrowDate[2] === usernameInfo['Plan'][i]['Time'][2]) {
             tempStr += `<div class="planinstance">`;
+
+            tempStr += `<div class="planachievetogglebutton" onclick="planAchieveToggle(usernameInfo['Plan'][${i}]['Category'], usernameInfo['Plan'][${i}]['Title'], usernameInfo['Plan'][${i}]['Time']);">`;
+            
+            if (usernameInfo['Plan'][i]['Status'] === 'NotAchieved') {
+                tempStr += `<div class="plannotachieved"></div>`;
+            } else {
+                tempStr += `<div class="planachieved"></div>`;
+            }
+
+            tempStr += `</div>`;
             tempStr += `<div class="category">${usernameInfo['Plan'][i]['Category']}</div>`;
             tempStr+= `<div class="title">${usernameInfo['Plan'][i]['Title']}</div>`;
             if (usernameInfo['Plan'][i]['Time'][4] === -1) {
@@ -79,15 +101,10 @@ function dashboardRefresh() {
             } else {
                 tempStr += `<div class="time">${String(usernameInfo['Plan'][i]['Time'][4]).padStart(2, '0')}:${String(usernameInfo['Plan'][i]['Time'][5]).padStart(2, '0')}</div>`;
             }
+            tempStr += `<div class="removebutton" onclick="removePlan(usernameInfo['Plan'][${i}]['Category'], usernameInfo['Plan'][${i}]['Title'], usernameInfo['Plan'][${i}]['Time']);"></div>`;
             tempStr += `</div>`;
             tomorrowContent.innerHTML += tempStr;
         }
-    }
-}
-
-function commandKeyUp(event) {
-    if (event.key === 'Enter') {
-        addPlan();
     }
 }
 
@@ -95,7 +112,65 @@ function addPlan() {
     let today = new Date();
     let command = commandTextbox.value.split(' ').slice(0, 4);
 
-    if (command.length === 3) {
+    if (command.length === 2) {
+        if (command[0] === '/AI') {
+            let todayPlan = [];
+
+            for (let i = 0; i < usernameInfo['Plan'].length; i++) {
+                if (usernameInfo['Plan'][i]['Time'][0] === today.getFullYear() && usernameInfo['Plan'][i]['Time'][1] === today.getMonth() + 1 && usernameInfo['Plan'][i]['Time'][2] === today.getDate()) {
+                    todayPlan.push(JSON.parse(JSON.stringify(usernameInfo['Plan'][i])));
+                }
+            }
+
+            if (command[1] === 'today') {
+                let targetDate = new Date();
+
+                for (let i = 0; i < todayPlan.length; i++) {
+                    let tempPlan = {
+                        'Category' : todayPlan[i]['Category'],
+                        'Title' : todayPlan[i]['Title'],
+                        'Status' : 'NotAchieved',
+                        'Time' : [targetDate.getFullYear(), targetDate.getMonth() + 1, targetDate.getDate(), targetDate.getDay(), todayPlan[i]['Time'][4],  todayPlan[i]['Time'][5]],
+                    };
+
+                    usernameInfo['Plan'].push(tempPlan);
+                }
+
+                dashboardRefresh();
+            } else if (command[1] === 'tomorrow') {
+                let targetDate = new Date();
+                targetDate.setDate(targetDate.getDate() + 1);
+
+                for (let i = 0; i < todayPlan.length; i++) {
+                    let tempPlan = {
+                        'Category' : todayPlan[i]['Category'],
+                        'Title' : todayPlan[i]['Title'],
+                        'Status' : 'NotAchieved',
+                        'Time' : [targetDate.getFullYear(), targetDate.getMonth() + 1, targetDate.getDate(), targetDate.getDay(), todayPlan[i]['Time'][4],  todayPlan[i]['Time'][5]],
+                    };
+
+                    usernameInfo['Plan'].push(tempPlan);
+                }
+
+                dashboardRefresh();
+            } else {
+                let targetDate = new Date(dateChecker(command[1])[0], dateChecker(command[1])[1] - 1, dateChecker(command[1])[2]);
+
+                for (let i = 0; i < todayPlan.length; i++) {
+                    let tempPlan = {
+                        'Category' : todayPlan[i]['Category'],
+                        'Title' : todayPlan[i]['Title'],
+                        'Status' : 'NotAchieved',
+                        'Time' : [targetDate.getFullYear(), targetDate.getMonth() + 1, targetDate.getDate(), targetDate.getDay(), todayPlan[i]['Time'][4],  todayPlan[i]['Time'][5]],
+                    };
+
+                    usernameInfo['Plan'].push(tempPlan);
+                }
+                
+                dashboardRefresh();
+            }
+        }
+    } else if (command.length === 3) {
         let plan = {
             'Category' : '',
             'Title' : '',
@@ -184,7 +259,6 @@ function addPlan() {
         if (regTime.test(command[3]) === true) {
             let timeSplit = command[3].split(':');
             let time = [parseInt(timeSplit[0]), parseInt(timeSplit[1])];
-            console.log(time);
 
             if (time[0] >= 0 && time[0] <= 23 && time[1] >= 0 && time[1] <= 59) {
                 plan['Time'][4] = time[0];
@@ -296,6 +370,58 @@ function leapYearCheck(year) {
     }
 }
 
+function removePlan(category, title, time) {
+    let timeMatch = false;
+
+    for (let i = 0; i < usernameInfo['Plan'].length; i++) {
+        if (usernameInfo['Plan'][i]['Category'] === category && usernameInfo['Plan'][i]['Title'] === title) {
+            for (let j = 0; j < 6; j++) {
+                if (usernameInfo['Plan'][i]['Time'][j] != time[j]) {
+                    break;
+                }
+
+                if (j === 5) {
+                    timeMatch = true;
+                }
+            }
+
+            if (timeMatch === true) {
+                usernameInfo['Plan'].splice(i, 1);
+                dashboardRefresh();
+                return;
+            }
+        }
+    }
+}
+
+function planAchieveToggle(category, title, time) {
+    let timeMatch = false;
+
+    for (let i = 0; i < usernameInfo['Plan'].length; i++) {
+        if (usernameInfo['Plan'][i]['Category'] === category && usernameInfo['Plan'][i]['Title'] === title) {
+            for (let j = 0; j < 6; j++) {
+                if (usernameInfo['Plan'][i]['Time'][j] != time[j]) {
+                    break;
+                }
+
+                if (j === 5) {
+                    timeMatch = true;
+                }
+            }
+
+            if (timeMatch === true) {
+                if (usernameInfo['Plan'][i]['Status'] === 'NotAchieved') {
+                    usernameInfo['Plan'][i]['Status'] = 'Achieved';
+                } else {
+                    usernameInfo['Plan'][i]['Status'] = 'NotAchieved';
+                }
+                dashboardRefresh();
+                return;
+            }
+        }
+    }
+}
+
 function moveToDashboard() {
     dashboardEnd();
     location.href = 'dashboard.html';
@@ -314,4 +440,10 @@ function moveToSettings() {
 function dashboardEnd() {
     account[username] = usernameInfo;
     localStorage.setItem('PlanGPT-Account', JSON.stringify(account));
+}
+
+function commandKeyUp(event) {
+    if (event.key === 'Enter') {
+        addPlan();
+    }
 }

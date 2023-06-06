@@ -104,6 +104,45 @@
     font-family: 'Open Sans';
     font-size: 20px;
     font-weight: normal;
+    text-align: center;
     vertical-align: top;
-    left: 720px;
+    left: 640px;
+    width: 100px;
+}
+
+.planachievetogglebutton {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.plannotachieved {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: black;
+}
+
+.planachieved {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: green;
+}
+
+.removebutton {
+    position: absolute;
+    left: 780px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: red;
+    z-index: 1;
 }

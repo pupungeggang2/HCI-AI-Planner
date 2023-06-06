@@ -8,12 +8,27 @@
     z-index: 1;
 }
 
+#calendarachieveratetext {
+    position: absolute;
+    left: 0px;
+    top: 120px;
+    font-family: 'Open Sans';
+    font-size: 28px;
+    font-weight: bold;
+    vertical-align: text-top;
+}
+
 #calendarleftbutton {
     position: absolute;
     left: 20%;
     top: 160px;
     width: 40px;
     height: 40px;
+    border-radius: 8px;
+    background-color: thistle;
+    font-family: 'Open Sans';
+    font-size: 32px;
+    vertical-align: text-top;
 }
 
 #calendarrightbutton {
@@ -22,6 +37,11 @@
     top: 160px;
     width: 40px;
     height: 40px;
+    border-radius: 8px;
+    background-color: thistle;
+    font-family: 'Open Sans';
+    font-size: 32px;
+    vertical-align: text-top;
 }
 
 #calendardate {
@@ -53,6 +73,8 @@
     font-family: 'Open Sans';
 }
 
+/*Table Week*/
+
 #calendarweeklytableheadview {
     position: fixed;
     left: 20%;
@@ -69,25 +91,233 @@
     height: 80px;
 }
 
-#calendarweeklyelementfirst {
-    border: 1px solid black;
-    width: 9%;
+.calendarweeklyheadrow {
+    line-height: 80px;
 }
 
-#calendarweeklyelement {
-    border: 1px solid black;
+.calendarweeklyheadelementfirst {
+    width: 9%;
+    line-height: 80px;
+    border-radius: 8px;
+    background-color: thistle;
+}
+
+.calendarweeklyheadelement {
     width: 13%;
+    line-height: 80px;
+    border-radius: 8px;
+    background-color: thistle;
 }
 
 #calendarweeklytableview {
     position: absolute;
     left: 20%;
-    top: 320px;
+    top: 330px;
     width: 70%;
-    height: 1920px;
 }
 
 #calendarweeklytable {
     width: 100%;
-    height: 100%
+    height: 100%;
+}
+
+.calendaweeklyrow {
+    line-height: 160px;
+}
+
+.calendarweeklyelementfirst {
+    line-height: 160px;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 8px;
+    background-color: thistle;
+}
+
+.calendarweeklyelement {
+    vertical-align: top;
+    width: 13%;
+    line-height: 160px;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 8px;
+    background-color: lavender;
+}
+
+/*Table Month*/
+
+#calendarmonthlytableheadview {
+    position: fixed;
+    left: 20%;
+    top: 240px;
+    width: 70%;
+    height: 80px;
+    background-color: white;
+    z-index: 1;
+}
+
+.calendarmonthlyheadrow {
+    line-height: 40px;
+}
+
+.calendarmonthlyrow {
+    line-height: 200px;
+}
+
+.calendarmonthlyheadelement {
+    position: relative;
+    line-height: 40px;
+    width: 14%;
+    border-radius: 8px;
+    background-color: thistle;
+}
+
+.calendarmonthlyelement {
+    position: relative;
+    vertical-align: top;
+    height: 200px;
+    line-height: 200px;
+    width: 14%;
+    border-radius: 8px;
+    background-color: lavender;
+}
+
+#calendarmonthlytablehead {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+}
+
+#calendarmonthlytableview {
+    position: absolute;
+    left: 20%;
+    top: 320px;
+    width: 70%;
+    height: 1000px;
+}
+
+#calendarmonthlytable {
+    width: 100%;
+    height: 100%;
+}
+
+.calendardatetext {
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translate(-50%, 0);
+    line-height: 20px;
+}
+
+#calendarmonthlytable .planinstance {
+    position: relative;
+    top: 20px;
+    width: 100%;
+    height: 80px;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 8px;
+    background-color: yellow;
+    text-align: left;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+
+#calendarweeklytable .planinstance {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 8px;
+    background-color: yellow;
+    text-align: left;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+
+.planachievebutton {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    line-height: 40px;
+}
+
+.planachieved {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    line-height: 40px;
+    border-radius: 16px;
+    background-color: green;
+}
+
+.plannotachieved {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    line-height: 40px;
+    border-radius: 16px;
+    background-color: black;
+}
+
+.planremovebutton {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    line-height: 40px;
+    border-radius: 16px;
+    background-color: red;
+}
+
+.plantime {
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    height: 40px;
+    transform: translate(-50%, 0);
+    line-height: 40px;
+}
+
+.plancategory {
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+}
+
+.plantitle {
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+}
+
+/* Edit Window */
+#calendareditwindow {
+    border: 2px solid black;
+    border-radius: 40px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 2;
 }

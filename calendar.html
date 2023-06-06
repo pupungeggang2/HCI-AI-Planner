@@ -16,7 +16,19 @@
         </div>
         <div id="calendartop"></div>
         <div id="calendarweeklytableheadview"></div>
+        <div id="calendarmonthlytableheadview"></div>
         <div id="calendarweeklytableview"></div>
         <div id="calendarmonthlytableview"></div>
+        <div id="calendareditwindow">
+            <input id="calendareditcategorytextbox" type="text">
+            <input id="calendaredittitletextbox" type="text">
+            <input id="calendaredityeartextbox" type="text">
+            <input id="calendareditmonthtextbox" type="text">
+            <input id="calendareditdatetextbox" type="text">
+            <input id="calendaredithourtextbox" type="text">
+            <input id="calendareditminutetextbox" type="text">
+            <button id="calendareditcancelbutton" onclick="editCancel();">Cancel</button>
+            <button id="calendardonebutton" onclick="editPlan(`${editPlanIndex}`);">Done</button>
+        </div>
     </body>
 </html>
