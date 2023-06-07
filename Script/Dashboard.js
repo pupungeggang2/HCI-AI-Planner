@@ -179,7 +179,7 @@ function addPlan() {
         };
 
         plan['Category'] = command[0];
-        plan['TItle'] = command[1];
+        plan['Title'] = command[1];
 
         if (command[2] === 'today') {
             plan['Time'][0] = today.getFullYear();
@@ -194,10 +194,11 @@ function addPlan() {
             plan['Time'][3] = today.getDay();
         } else {
             let returnedDate = dateChecker(command[2]);
+            console.log(returnedDate);
 
             if (returnedDate === null) {
                 plan['Time'][0] = today.getFullYear();
-                plan['Time'][1] = today.getMonth();
+                plan['Time'][1] = today.getMonth() + 1;
                 plan['Time'][2] = today.getDate();
                 plan['Time'][3] = today.getDay();
             } else {
@@ -242,7 +243,7 @@ function addPlan() {
 
             if (returnedDate === null) {
                 plan['Time'][0] = today.getFullYear();
-                plan['Time'][1] = today.getMonth();
+                plan['Time'][1] = today.getMonth() + 1;
                 plan['Time'][2] = today.getDate();
                 plan['Time'][3] = today.getDay();
             } else {
@@ -285,7 +286,7 @@ function dateChecker(str) {
     let today = new Date();
     const regDateExDateYYYYMMDD = /^[0-9]?[0-9]?[0-9]?[0-9]?\/[0-9]?[0-9]?\/[0-9]?[0-9]?$/;
     const regDateExDateYYMMDD = /^[0-9]?[0-9]?\/[0-9]?[0-9]?\/[0-9]?[0-9]?$/;
-    const regDateExDateMMDD = /^[0-9]?[0-9]?\/[0-9]?[0-9]?\/[0-9]?[0-9]?$/;
+    const regDateExDateMMDD = /^[0-9]?[0-9]?\/[0-9]?[0-9]?$/;
     const regDateExDateDD = /^[0-9]?[0-9]?$/;
     const monthDateNotLeap = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     const monthDateLeap = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

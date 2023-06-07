@@ -1,6 +1,51 @@
-#tutorial {
+#tutorialwindow {
     position: absolute;
     left: 50%;
-    top: 200px;
-    transform: translate(-50%, 0);
+    top: 50%;
+    width: 1000px;
+    height: 700px;
+    transform: translate(-50%, -50%);
+    border : 2px solid black;
+    border-radius: 8px;
+}
+
+#tutorialtitle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: 'Open Sans';
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#tutorialimage {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+}
+
+#tutorialprevbutton {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 80px;
+    height: 40px;
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: thistle;
+}
+
+#tutorialnextbutton {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 80px;
+    height: 40px;
+    font-family: 'Open Sans';
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: thistle;
 }

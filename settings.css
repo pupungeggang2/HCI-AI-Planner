@@ -25,12 +25,14 @@
     top: 40px;
     width: 60px;
     height: 24px;
+    border-radius: 4px;
+    background-color: thistle;
 }
 
 #settingsemail {
     position: absolute;
     left: 20%;
-    top: 280px;
+    top: 240px;
 }
 
 #settingsemailtext {
@@ -54,12 +56,14 @@
     top: 40px;
     width: 60px;
     height: 24px;
+    border-radius: 4px;
+    background-color: thistle;
 }
 
 #settingspassword {
     position: absolute;
     left: 20%;
-    top: 400px;
+    top: 320px;
 }
 
 #settingspasswordtext {
@@ -99,17 +103,28 @@
     top: 120px;
     width: 60px;
     height: 24px;
-
+    border-radius: 4px;
+    background-color: thistle;
 }
 
 #settingslogoutbutton {
     position: absolute;
-    right: 240px;
-    top: 640px;
+    right: 280px;
+    bottom: 80px;
+    width: 120px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: thistle;
+    font-size: 24px;
 }
 
 #settingsdeleteaccountbutton {
     position: absolute;
     right: 80px;
-    top: 640px;
+    bottom: 80px;
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: thistle;
+    font-size: 24px;
 }

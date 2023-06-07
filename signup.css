@@ -93,6 +93,8 @@
     height: 40px;
     font-family: 'Open Sans';
     font-size: 24px;
+    border-radius: 8px;
+    background-color: thistle;
 }
 
 #signupconfirmbutton {
@@ -103,4 +105,6 @@
     height: 40px;
     font-family: 'Open Sans';
     font-size: 24px;
+    border-radius: 8px;
+    background-color: thistle;
 }

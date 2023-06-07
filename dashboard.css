@@ -80,7 +80,8 @@
 
 .category {
     position: absolute;
-    top : 0px;
+    top: 50%;
+    transform: translate(0, -50%);
     font-family: 'Open Sans';
     font-size: 20px;
     font-weight: normal;
@@ -90,7 +91,8 @@
 
 .title {
     position: absolute;
-    top : 0px;
+    top: 50%;
+    transform: translate(0, -50%);
     font-family: 'Open Sans';
     font-size: 20px;
     font-weight: normal;
@@ -100,7 +102,8 @@
 
 .time {
     position: absolute;
-    top : 0px;
+    top: 50%;
+    transform: translate(0, -50%);
     font-family: 'Open Sans';
     font-size: 20px;
     font-weight: normal;

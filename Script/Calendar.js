@@ -200,7 +200,7 @@ function refreshCalendar() {
         monthElement.innerHTML = '';
 
         calendarTopElement.innerHTML += `<button id="calendarleftbutton" onclick="goPreviousMonth();"><</button>`;
-        if (numOfWeeklyPlan > 0) {
+        if (numOfMonthlyPlan > 0) {
             calendarTopElement.innerHTML += `<div id="calendarachieveratetext">${Math.floor(numOfMonthlyPlanAchieved / numOfMonthlyPlan * 100)}% Achieved</div>`;
         }
         calendarTopElement.innerHTML += `<div id="calendardate">${dayCurrent.getFullYear()}/${dayCurrent.getMonth() + 1}</div>`;
@@ -242,7 +242,7 @@ function refreshCalendar() {
                         tempStr += `<div class="plantime">--:--</div>`;
                     }
                     tempStr += `<div class="plancategory" onclick="editPlanInit(${index});">${usernameInfo['Plan'][index]['Category']}</div>`;
-                    tempStr += `<div class="plantitle" onclick="editPlanInit(${index});>${usernameInfo['Plan'][index]['Title']}</div>`;
+                    tempStr += `<div class="plantitle" onclick="editPlanInit(${index});">${usernameInfo['Plan'][index]['Title']}</div>`;
                     tempStr += `<div class="planremovebutton" onclick="removePlan(${index});"></div>`;
                     tempStr += `</div>`;
                 }
@@ -379,45 +379,57 @@ function leapYearCheck(year) {
 }
 
 function onButtonWeekClick() {
-    viewMode = 'Week';
+    if (editMode === false) {
+        viewMode = 'Week';
 
-    findCalendarDate();
-    refreshCalendar();
+        findCalendarDate();
+        refreshCalendar();
+    }
 }
 
 function onButtonMonthClick() {
-    viewMode = 'Month';
+    if (editMode === false) {
+        viewMode = 'Month';
 
-    findCalendarDate();
-    refreshCalendar();
+        findCalendarDate();
+        refreshCalendar();
+    }
 }
 
 function goPreviousWeek() {
-    dayCurrent.setDate(dayCurrent.getDate() - 7);
+    if (editMode === false) {
+        dayCurrent.setDate(dayCurrent.getDate() - 7);
 
-    findCalendarDate();
-    refreshCalendar();
+        findCalendarDate();
+        refreshCalendar();
+    }
 }
 
 function goNextWeek() {
-    dayCurrent.setDate(dayCurrent.getDate() + 7);
+    if (editMode === false) {
+        dayCurrent.setDate(dayCurrent.getDate() + 7);
 
-    findCalendarDate();
-    refreshCalendar();
+        findCalendarDate();
+        refreshCalendar();
+    }
 }
 
 function goPreviousMonth() {
-    dayCurrent.setMonth(dayCurrent.getMonth() - 1);
+    if (editMode === false) {
+        dayCurrent.setMonth(dayCurrent.getMonth() - 1);
 
-    findCalendarDate();
-    refreshCalendar();
+        findCalendarDate();
+        refreshCalendar();
+    }
 }
 
 function goNextMonth() {
-    dayCurrent.setMonth(dayCurrent.getMonth() + 1);
+    if (editMode === false) {
+        dayCurrent.setMonth(dayCurrent.getMonth() + 1);
 
-    findCalendarDate();
-    refreshCalendar();
+        findCalendarDate();
+        refreshCalendar();
+    }
 }
 
 function calendarEnd() {

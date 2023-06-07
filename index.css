@@ -17,6 +17,8 @@
     transform: translate(-50%, 0);
     font-family: 'Open Sans';
     font-size: 24px;
+    border-radius: 8px;
+    background-color: thistle;
 }
 
 #indexbuttonsignup {
@@ -28,4 +30,6 @@
     transform: translate(-50%, 0);
     font-family: 'Open Sans';
     font-size: 24px;
+    border-radius: 8px;
+    background-color: thistle;
 }

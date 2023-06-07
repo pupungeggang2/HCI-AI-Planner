@@ -20,6 +20,14 @@
         <div id="calendarweeklytableview"></div>
         <div id="calendarmonthlytableview"></div>
         <div id="calendareditwindow">
+            <div id="calendaredittitle">Edit Plan</div>
+            <div id="calendareditcategorytext">Category</div>
+            <div id="calendaredittitletext">Title</div>
+            <div id="calendareditdatetext">Date</div>
+            <div id="calendaredittimetext">Time</div>
+            <div style="position:absolute; left: 88px; top:170px">/</div>
+            <div style="position:absolute; left: 138px; top:170px">/</div>
+            <div style="position:absolute; left: 340px; top:170px">:</div>
             <input id="calendareditcategorytextbox" type="text">
             <input id="calendaredittitletextbox" type="text">
             <input id="calendaredityeartextbox" type="text">
@@ -28,7 +36,7 @@
             <input id="calendaredithourtextbox" type="text">
             <input id="calendareditminutetextbox" type="text">
             <button id="calendareditcancelbutton" onclick="editCancel();">Cancel</button>
-            <button id="calendardonebutton" onclick="editPlan(`${editPlanIndex}`);">Done</button>
+            <button id="calendareditdonebutton" onclick="editPlan(`${editPlanIndex}`);">Done</button>
         </div>
     </body>
 </html>
