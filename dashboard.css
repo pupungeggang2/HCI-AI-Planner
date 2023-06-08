@@ -78,6 +78,14 @@
     margin-bottom: 8px;
 }
 
+.planinstanceedit {
+    position: absolute;
+    left: 40px;
+    top : 0px;
+    width: 720px;
+    height: 100%;
+}
+
 .category {
     position: absolute;
     top: 50%;
@@ -148,4 +156,145 @@
     border-radius: 16px;
     background-color: red;
     z-index: 1;
+}
+
+/* Edit */
+#dashboardeditwindow {
+    border: 2px solid black;
+    border-radius: 20px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 600px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background-color: lavender;
+    font-family: 'Open Sans';
+    font-size: 32px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+#dashboardedittitle {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+#dashboardeditcategorytext {
+    position: absolute;
+    font-size: 24px;
+    left: 20px;
+    top: 60px;
+}
+
+#dashboardedittitletext {
+    position: absolute;
+    font-size: 24px;
+    left: 300px;
+    top: 60px;
+}
+
+#dashboardeditdatetext {
+    position: absolute;
+    font-size: 24px;
+    left: 20px;
+    top: 140px;
+}
+
+#dashboardedittimetext {
+    position: absolute;
+    font-size: 24px;
+    left: 300px;
+    top: 140px;
+}
+
+#dashboardeditcategorytextbox {
+    position: absolute;
+    font-size: 24px;
+    left: 20px;
+    top: 90px;
+    width: 260px;
+    height: 32px;
+}
+
+#dashboardedittitletextbox {
+    position: absolute;
+    font-size: 24px;
+    left: 300px;
+    top: 90px;
+    width: 260px;
+    height: 32px;
+}
+
+#dashboardedityeartextbox {
+    position: absolute;
+    font-size: 24px;
+    left: 20px;
+    top: 170px;
+    width: 60px;
+    height: 32px;
+    text-align: center;
+}
+
+#dashboardeditmonthtextbox {
+    position: absolute;
+    font-size: 24px;
+    left: 100px;
+    top: 170px;
+    width: 30px;
+    height: 32px;
+    text-align: center;
+}
+
+#dashboardeditdatetextbox {
+    position: absolute;
+    font-size: 24px;
+    left: 150px;
+    top: 170px;
+    width: 30px;
+    height: 32px;
+    text-align: center;
+}
+
+#dashboardedithourtextbox {
+    position: absolute;
+    font-size: 24px;
+    left: 300px;
+    top: 170px;
+    width: 30px;
+    height: 32px;
+    text-align: center;
+}
+
+#dashboardeditminutetextbox {
+    position: absolute;
+    font-size: 24px;
+    left: 350px;
+    top: 170px;
+    width: 30px;
+    height: 32px;
+    text-align: center;
+}
+
+#dashboardeditcancelbutton {
+    position: absolute;
+    right: 140px;
+    bottom: 20px;
+    width: 120px;
+    height: 40px;
+    font-size: 24px;
+    border-radius: 8px;
+    background-color: thistle;
+}
+
+#dashboardeditdonebutton {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 120px;
+    height: 40px;
+    font-size: 24px;
+    border-radius: 8px;
+    background-color: thistle;
 }

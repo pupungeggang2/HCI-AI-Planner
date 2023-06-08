@@ -5,6 +5,8 @@ let account;
 let username;
 let usernameInfo;
 let commandTextbox;
+let editMode = false;
+let editPlanIndex = -1;
 
 function dashboardInit() {
     if (localStorage.getItem('PlanGPT-Account') === null) {
@@ -50,6 +52,7 @@ function dashboardRefresh() {
 
     let todayContent = document.getElementById('dashboardtodaycontent');
     let tomorrowContent = document.getElementById('dashboardtomorrowcontent');
+    let dashboardEditWindow = document.getElementById('dashboardeditwindow');
 
     todayContent.innerHTML = '';
     tomorrowContent.innerHTML = '';
@@ -59,7 +62,7 @@ function dashboardRefresh() {
 
         if (todayDate[0] === usernameInfo['Plan'][i]['Time'][0] && todayDate[1] === usernameInfo['Plan'][i]['Time'][1] && todayDate[2] === usernameInfo['Plan'][i]['Time'][2]) {
             tempStr += `<div class="planinstance">`;
-            
+            tempStr += `<div class="planinstanceedit" onclick="editPlanInit(${i});"></div>`;
             tempStr += `<div class="planachievetogglebutton" onclick="planAchieveToggle(usernameInfo['Plan'][${i}]['Category'], usernameInfo['Plan'][${i}]['Title'], usernameInfo['Plan'][${i}]['Time']);">`;
             
             if (usernameInfo['Plan'][i]['Status'] === 'NotAchieved') {
@@ -84,7 +87,7 @@ function dashboardRefresh() {
 
         if (tomorrowDate[0] === usernameInfo['Plan'][i]['Time'][0] && tomorrowDate[1] === usernameInfo['Plan'][i]['Time'][1] && tomorrowDate[2] === usernameInfo['Plan'][i]['Time'][2]) {
             tempStr += `<div class="planinstance">`;
-
+            tempStr += `<div class="planinstanceedit" onclick="editPlanInit(${i});"></div>`;
             tempStr += `<div class="planachievetogglebutton" onclick="planAchieveToggle(usernameInfo['Plan'][${i}]['Category'], usernameInfo['Plan'][${i}]['Title'], usernameInfo['Plan'][${i}]['Time']);">`;
             
             if (usernameInfo['Plan'][i]['Status'] === 'NotAchieved') {
@@ -105,6 +108,12 @@ function dashboardRefresh() {
             tempStr += `</div>`;
             tomorrowContent.innerHTML += tempStr;
         }
+    }
+
+    if (editMode === true) {
+        dashboardEditWindow.style.display = 'block';
+    } else {
+        dashboardEditWindow.style.display = 'none';
     }
 }
 
@@ -421,6 +430,90 @@ function planAchieveToggle(category, title, time) {
             }
         }
     }
+}
+
+function editPlanInit(index) {
+    if (editMode === false) {
+        editMode = true;
+        editPlanIndex = index;
+
+        let dashboardEditWindow = document.getElementById('dashboardeditwindow');
+
+        document.getElementById('dashboardeditcategorytextbox').value = usernameInfo['Plan'][index]['Category'];
+        document.getElementById('dashboardedittitletextbox').value = usernameInfo['Plan'][index]['Title'];
+        document.getElementById('dashboardedityeartextbox').value = usernameInfo['Plan'][index]['Time'][0];
+        document.getElementById('dashboardeditmonthtextbox').value = usernameInfo['Plan'][index]['Time'][1];
+        document.getElementById('dashboardeditdatetextbox').value = usernameInfo['Plan'][index]['Time'][2];
+        document.getElementById('dashboardedithourtextbox').value = usernameInfo['Plan'][index]['Time'][4];
+        document.getElementById('dashboardeditminutetextbox').value = usernameInfo['Plan'][index]['Time'][5];
+
+        dashboardRefresh();
+    }
+}
+
+function editPlan(index) {
+    let category = document.getElementById('dashboardeditcategorytextbox').value;
+    let title = document.getElementById('dashboardedittitletextbox').value;
+    let year = parseInt(document.getElementById('dashboardedityeartextbox').value);
+    let month = parseInt(document.getElementById('dashboardeditmonthtextbox').value);
+    let date = parseInt(document.getElementById('dashboardeditdatetextbox').value);
+    let hour = parseInt(document.getElementById('dashboardedithourtextbox').value);
+    let minute = parseInt(document.getElementById('dashboardeditminutetextbox').value);
+    const monthDateNotLeap = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    const monthDateLeap = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    if (category.length <= 0) {
+        return;
+    }
+
+    if (title.length <= 0) {
+        return;
+    }
+
+    if (!Number.isInteger(year) || !Number.isInteger(month) || !Number.isInteger(date) || !Number.isInteger(hour) || !Number.isInteger(minute)) {
+        return;
+    }
+
+    if (month < 1 || month > 12) {
+        return;
+    }
+
+    if (leapYearCheck(year) === true) {
+        if (date < 1 || date > monthDateLeap[month]) {
+            return;
+        }
+    } else {
+        if (date < 1 || date > monthDateNotLeap[month]) {
+            return;
+        }
+    }
+
+    if (hour < 0 || hour > 23) {
+        return;
+    }
+
+    if (minute < 0 || minute > 59) {
+        return;
+    }
+
+    usernameInfo['Plan'][index]['Category'] = category;
+    usernameInfo['Plan'][index]['Title'] = title;
+    usernameInfo['Plan'][index]['Time'][0] = year;
+    usernameInfo['Plan'][index]['Time'][1] = month;
+    usernameInfo['Plan'][index]['Time'][2] = date;
+    usernameInfo['Plan'][index]['Time'][3] = new Date(year, month - 1, date).getDate();
+    usernameInfo['Plan'][index]['Time'][4] = hour;
+    usernameInfo['Plan'][index]['Time'][5] = minute;
+
+    editMode = false;
+    editPlanIndex = -1;
+    dashboardRefresh();
+}
+
+function editCancel() {
+    editMode = false;
+    editPlanIndex = -1;
+    dashboardRefresh();
 }
 
 function moveToDashboard() {

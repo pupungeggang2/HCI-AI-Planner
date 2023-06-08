@@ -27,5 +27,24 @@
             <div id="dashboardtomorrowtext">Tomorrow</div>
             <div id="dashboardtomorrowcontent"></div>
         </div>
+        <div id="dashboardeditwindow">
+            <div id="dashboardedittitle">Edit Plan</div>
+            <div id="dashboardeditcategorytext">Category</div>
+            <div id="dashboardedittitletext">Title</div>
+            <div id="dashboardeditdatetext">Date</div>
+            <div id="dashboardedittimetext">Time</div>
+            <div style="position:absolute; left: 88px; top:170px">/</div>
+            <div style="position:absolute; left: 138px; top:170px">/</div>
+            <div style="position:absolute; left: 340px; top:170px">:</div>
+            <input id="dashboardeditcategorytextbox" type="text">
+            <input id="dashboardedittitletextbox" type="text">
+            <input id="dashboardedityeartextbox" type="text">
+            <input id="dashboardeditmonthtextbox" type="text">
+            <input id="dashboardeditdatetextbox" type="text">
+            <input id="dashboardedithourtextbox" type="text">
+            <input id="dashboardeditminutetextbox" type="text">
+            <button id="dashboardeditcancelbutton" onclick="editCancel();">Cancel</button>
+            <button id="dashboardeditdonebutton" onclick="editPlan(`${editPlanIndex}`);">Done</button>
+        </div>
     </body>
 </html>
